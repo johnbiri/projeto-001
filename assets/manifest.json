@@ -1,0 +1,21 @@
+{
+  "name": "Vidraçaria Serrana",
+  "short_name": "VS",
+  "description": "Qualidade e Agilidade para Você",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c4ffe",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/assets/img/logos/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/logos/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
