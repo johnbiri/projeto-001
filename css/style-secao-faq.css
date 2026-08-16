@@ -1,0 +1,33 @@
+.secao-faq{position:relative;overflow:hidden;padding:0;background:url("../assets/images/bg-equipe-tecnica.jpg") top center/cover no-repeat;}
+.faq-conteudo{position:relative;z-index:1;display:grid;justify-items:center;height:100%;min-height:100%;padding:20px 0 35px;}
+.faq-cabecalho{display:grid;justify-items:center;width:100%;margin:0 0 8px;text-align:center;overflow:visible;}
+.faq-cabecalho p{max-width:none;margin:0 0 4px;color:#111;font-family:var(--font-headline);font-size:clamp(1.7rem,7.4vw,2.4rem);font-weight:800;line-height:1;transform:translateX(-22px);opacity:0;transition:transform .5s cubic-bezier(.22,1,.36,1),opacity .4s ease;}
+.faq-cabecalho h2{margin:0 0 25px;color:#050505;font-family:var(--font-headline);font-size:clamp(3.05rem,13.5vw,4.5rem);font-weight:900;line-height:.98;letter-spacing:0;text-transform:none;transform:translateX(22px);opacity:0;transition:transform .55s cubic-bezier(.22,1,.36,1),opacity .45s ease;}
+.faq-cabecalho img{display:block;width:min(280px,78vw);transform:translateX(22px);opacity:0;transition:transform .6s cubic-bezier(.22,1,.36,1) .08s,opacity .45s ease .08s;}
+.faq-cabecalho.visivel p,.entrada-secao.visivel .faq-cabecalho p{transform:translateX(0);opacity:1;}
+.faq-cabecalho.visivel h2,.entrada-secao.visivel .faq-cabecalho h2{transform:translateX(0);opacity:1;}
+.faq-cabecalho.visivel img,.entrada-secao.visivel .faq-cabecalho img{transform:translateX(0);opacity:1;}
+.lista-faq{display:grid;gap:11px;width:min(100%,360px);margin-top:auto;margin-bottom:20px;}
+.item-faq{border:1px solid rgba(93,96,101,.48);border-radius:8px;background:rgba(255,255,255,.94);box-shadow:0 4px 11px rgba(24,24,28,.08);overflow:hidden;}
+.item-faq h3{margin:0;}
+.pergunta-faq{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;width:100%;min-height:38px;padding:0 9px 0 14px;border:0;color:#d3237b;font-family:var(--font-support);font-size:clamp(.88rem,3.8vw,1.05rem);font-weight:700;line-height:1.2;text-align:left;background:transparent;cursor:pointer;}
+.pergunta-faq strong{font-weight:900;}
+.pergunta-faq i{position:relative;display:block;width:24px;height:24px;flex:0 0 24px;border-radius:50%;background:#555;transform:rotate(0deg);transition:transform .28s cubic-bezier(.22,1,.36,1),background .25s ease;}
+.pergunta-faq i::before,.pergunta-faq i::after{content:"";position:absolute;top:50%;width:8px;height:2px;border-radius:999px;background:#fff;}
+.pergunta-faq i::before{left:6px;transform:translateY(-50%) rotate(45deg);}
+.pergunta-faq i::after{right:6px;transform:translateY(-50%) rotate(-45deg);}
+.item-faq.aberto .pergunta-faq i{background:#e02c80;transform:rotate(180deg);}
+.faq-respostas{display:none;}
+.faq-modal{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:20px;background:rgba(0,0,0,0);visibility:hidden;opacity:0;pointer-events:none;transition:opacity .28s ease,background .28s ease,visibility 0s linear .28s;}
+.faq-modal.aberto{background:rgba(0,0,0,.68);visibility:visible;opacity:1;pointer-events:auto;transition:opacity .28s ease,background .28s ease;}
+.faq-modal-caixa{position:relative;width:min(100%,500px);max-height:80vh;padding:42px 22px 24px;border:2px solid #e02c80;border-radius:10px;background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.3);overflow:auto;transform:translateY(25px) scale(.94);opacity:0;transition:transform .38s cubic-bezier(.22,1,.36,1),opacity .28s ease;}
+.faq-modal.aberto .faq-modal-caixa{transform:translateY(0) scale(1);opacity:1;}
+.faq-modal-fechar{position:absolute;top:9px;right:10px;z-index:2;display:grid;place-items:center;width:32px;height:32px;padding:0;border:0;border-radius:50%;color:#fff;font-family:Arial,sans-serif;font-size:25px;line-height:1;background:#e02c80;cursor:pointer;transition:transform .2s ease,background .2s ease;}
+.faq-modal-fechar:hover{transform:scale(1.08) rotate(90deg);}
+.faq-modal-conteudo{opacity:0;transform:translateY(12px);color:#353535;font-family:var(--font-support);font-size:.92rem;line-height:1.5;transition:opacity .22s ease,transform .22s ease;}
+.faq-modal.aberto.mostrar .faq-modal-conteudo{opacity:1;transform:translateY(0);}
+.faq-modal-conteudo p{margin:0;}
+.faq-modal-conteudo b{font-weight:900;}
+.faq-modal-titulo{margin:0 0 16px;color:#d3237b;font-family:var(--font-headline);font-size:1.15rem;font-weight:900;line-height:1.2;}
+@media (min-width:768px){.lista-faq{width:min(100%,500px);}}
+@media (prefers-reduced-motion:reduce){.faq-cabecalho p,.faq-cabecalho h2,.faq-cabecalho img,.faq-modal,.faq-modal-caixa,.faq-modal-conteudo,.faq-modal-fechar{transition:none;}}
