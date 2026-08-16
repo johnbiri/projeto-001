@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="css/style-secao-resultado.css" />
     <link rel="stylesheet" href="css/style-secao-personalizados.css" />
     <link rel="stylesheet" href="css/style-secao-depoimentos.css" />
+    <link rel="stylesheet" href="css/style-secao-como-funciona.css" />
+    <link rel="stylesheet" href="css/style-secao-voce-recebera.css" />
+    <link rel="stylesheet" href="css/style-secao-planos.css" />
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
@@ -234,12 +237,12 @@
         </div>
       </section>
 
+      <!-- seção como funciona -->
       <section class="secao-como-funciona" id="como-funciona" aria-labelledby="como-funciona-titulo">
         <div class="container como-funciona-conteudo">
           <div class="como-funciona-bloco entrada-secao">
             <h2 class="como-funciona-titulo" id="como-funciona-titulo">Como funciona ?</h2>
-            <img src="assets/images/linha-titulos.png" alt="Linha dos Títulos" />
-
+            <img class="pincel-como-funciona" src="assets/images/linha-titulos.png" alt="Linha dos Títulos" />
             <ol class="lista-como-funciona" aria-label="Etapas do método">
               <li>
                 <span class="numero-passo">1.</span>
@@ -259,7 +262,6 @@
               </li>
             </ol>
           </div>
-
           <div class="alerta-como-funciona entrada-secao">
             <p>
               <strong>Dietas genéricas</strong> falham, pois <strong>não usam teus dados.</strong>
@@ -269,33 +271,34 @@
         </div>
       </section>
 
+      <!-- seção voce recebera -->
       <section class="secao-voce-recebera" id="voce-recebera" aria-labelledby="voce-recebera-titulo">
         <div class="container voce-recebera-conteudo">
           <div class="voce-recebera-textos entrada-secao">
-            <h2 class="voce-recebera-titulo" id="voce-recebera-titulo">
-              Prepare o <span aria-hidden="true">❤</span>
-            </h2>
-            <p class="voce-recebera-subtitulo"><strong>Você</strong> receberá o:</p>
-            <img src="assets/images/linha-branca.png" alt="Linha dos Títulos" class="linha-abaixo-titulo" />
-
-            <div class="personalizado-recebera">
-              <h3>Personalizado com</h3>
-              <ul class="lista-recebera">
-                <li>Dieta</li>
-                <li>Cardio</li>
-                <li>Treino</li>
-                <li>Orientações</li>
-              </ul>
+            <div class="recebera-topo">
+              <h2 class="voce-recebera-titulo" id="voce-recebera-titulo">Prepare o <span class="coracao" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span></h2>
+              <p class="voce-recebera-subtitulo"><strong>Você</strong> receberá o:</p>
+              <img src="assets/images/linha-branca.png" alt="Linha dos Títulos" class="linha-abaixo-titulo" />
             </div>
-
-            <div class="dados-recebera entrada-secao">
-              <p>Altura, idade, peso, nº de refeições por dia, dias de treino por semana. <strong>Usamos tudo na personalização</strong></p>
+            <div class="recebera-baixo">
+              <div class="personalizado-recebera">
+                <h3>Personalizado com</h3>
+                <ul class="lista-recebera">
+                  <li>Dieta</li>
+                  <li>Cardio</li>
+                  <li>Treino</li>
+                  <li>Orientações</li>
+                </ul>
+              </div>
+              <div class="dados-recebera entrada-secao">
+                <p>Altura, idade, peso, nº de refeições por dia, dias de treino por semana. <strong>Usamos tudo na personalização</strong></p>
+              </div>
             </div>
           </div>
-
         </div>
       </section>
 
+      <!-- seção equipe tecnica -->
       <section class="secao-equipe-tecnica" id="equipe-tecnica" aria-labelledby="equipe-tecnica-titulo">
         <div class="container equipe-tecnica-conteudo">
           <div class="equipe-cabecalho entrada-secao">
@@ -333,6 +336,7 @@
         <strong class="texto-vertical-equipe" aria-hidden="true">Equipe técnica</strong>
       </section>
 
+      <!-- seção planos -->
       <section class="secao-planos" id="planos" aria-labelledby="planos-titulo">
         <div class="container planos-conteudo">
           <div class="planos-cabecalho entrada-secao">
