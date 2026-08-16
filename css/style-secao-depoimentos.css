@@ -1,0 +1,17 @@
+.secao-depoimentos{position:relative;overflow:hidden;padding:0;background:url("../assets/images/bg-secao-depoimentos-mobile.jpg") center/cover no-repeat;}
+.secao-depoimentos::before,.secao-depoimentos::after{content:"";position:absolute;pointer-events:none;}
+.secao-depoimentos::before{inset:0;z-index:0;background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.2),transparent 26%),linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,.26));}
+.secao-depoimentos::after{inset:auto 0 0;z-index:1;height:34%;background:linear-gradient(180deg,transparent,rgba(255,255,255,.46));}
+.depoimentos-conteudo{position:relative;z-index:2;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;}
+.depoimentos-topo{position:absolute;z-index:5;top:12px;left:0;width:100%;display:flex;justify-content:center;text-align:center;margin:0;}
+.depoimentos-topo h2{margin:0;color:#fff;font-family:var(--font-headline);font-size:40px;font-weight:700;line-height:.84;text-align:center;text-shadow:0 2px 18px rgba(255,255,255,.72);}
+.depoimentos-topo h2 span{display:block;margin-top:15px;color:#000;font-size:64px;}
+.depoimentos-texto-vertical{position:absolute;z-index:4;left:10px;top:50%;width:26px;height:320px;max-height:320px;margin:0;color:#111018;font-family:var(--font-support);font-size:10px;font-weight:900;line-height:1.25;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);text-align:center;overflow:hidden;}
+.depoimentos-palco{position:absolute;z-index:3;top:50%;left:50%;width:min(90vw,520px);height:430px;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;overflow:visible;touch-action:pan-y;}
+.depoimentos-faixa{position:relative;width:320px;height:340px;padding:0;margin:0;display:block;}
+.depoimento-card{position:absolute;top:50%;left:50%;width:220px;height:320px;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.76);box-shadow:0 12px 28px rgba(0,0,0,.18);opacity:0;pointer-events:none;transform:translate(-50%,-50%) scale(.88);transition:opacity .45s ease,transform .45s ease,box-shadow .45s ease;backdrop-filter:blur(2px);}
+.depoimento-card.ativo{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1.06);z-index:5;box-shadow:0 16px 35px rgba(0,0,0,.25);}
+.depoimento-card.proximo{opacity:.38;pointer-events:auto;transform:translate(calc(-50% + 150px),-50%) scale(.88);z-index:4;box-shadow:0 12px 28px rgba(0,0,0,.18);}
+.depoimento-card img{width:100%;height:100%;object-fit:contain;background:#fff;}
+.seta-depoimento{display:none;}
+.botao-depoimentos{position:absolute;z-index:6;left:50%;bottom:55px;transform:translateX(-50%);display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 30px;margin:0;border:1px solid #fff;border-radius:6px;color:#fff;font-family:var(--font-support);font-size:1rem;font-weight:400;white-space:nowrap;background:linear-gradient(90deg,#6b56f6 0%,#4bbfdf 100%);box-shadow:0 14px 28px rgba(62,87,210,.22);}

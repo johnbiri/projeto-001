@@ -1,0 +1,32 @@
+.secao-personalizados{position:relative;overflow:hidden;padding:75px 0;background:url("../assets/images/bg-secao-personalizados-mobile.jpg") center bottom/cover no-repeat}
+.secao-personalizados::after{content:"";position:absolute;left:0;right:0;bottom:0;height:44%;background:linear-gradient(180deg,transparent 0%,rgba(44,49,57,.62) 100%),repeating-linear-gradient(35deg,rgba(255,255,255,.11) 0 1px,transparent 1px 54px),repeating-linear-gradient(-35deg,rgba(255,255,255,.08) 0 1px,transparent 1px 58px);pointer-events:none}
+.marca-dagua{position:absolute;width:210px;height:260px;opacity:.05;background:url("../assets/logo/logo-favicon.png") center/contain no-repeat;pointer-events:none}
+.marca-dagua-esquerda{left:-88px;top:18px;transform:rotate(-8deg)}
+.marca-dagua-direita{right:-116px;top:126px;transform:rotate(8deg)}
+.personalizados-conteudo{position:relative;z-index:1;display:grid;justify-items:center;text-align:center}
+.lista-beneficios{display:grid;grid-template-columns:repeat(4,1fr);align-items:end;width:min(100%,430px);margin-bottom:22px}
+.beneficio-personalizado{position:relative;display:grid;justify-items:center;gap:6px;min-width:0}
+.beneficio-personalizado:not(:last-child)::after{content:"";position:absolute;top:8px;right:0;width:1px;height:50px;background:rgba(9,6,39,.28)}
+.beneficio-personalizado img{width:clamp(42px,13vw,58px);height:clamp(42px,13vw,58px);object-fit:contain}
+.beneficio-personalizado span{color:#24212b;font-family:var(--font-support);font-size:clamp(.72rem,3vw,.92rem)}
+.titulo-personalizados{display:grid;grid-template-columns:minmax(26px,1fr) auto minmax(26px,1fr);align-items:center;gap:10px;width:min(100%,390px);margin-bottom:12px}
+.titulo-personalizados>span{height:1px;background:rgba(9,6,39,.36)}
+.titulo-personalizados h2{margin:0;color:#0d0a18;font-family:var(--font-body);font-size:clamp(1.32rem,5vw,1.95rem);font-weight:800;line-height:1.22;text-transform:none}
+.titulo-personalizados small{font-size:.82em;font-weight:500}
+.titulo-personalizados strong{color:#e02c80;font-weight:500}
+.prazo-personalizados{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 15px;margin-bottom:50px;border:1px solid rgba(9,6,39,.28);border-radius:12px;color:#0d0a18;background:rgba(255,255,255,.78);box-shadow:0 8px 20px rgba(9,6,39,.08)}
+.icone-relogio{position:relative;width:24px;height:24px;border:2px solid rgba(9,6,39,.32);border-radius:50%}
+.icone-relogio::before,.icone-relogio::after{content:"";position:absolute;left:50%;top:50%;width:2px;background:rgba(9,6,39,.42);transform-origin:bottom}
+.icone-relogio::before{height:7px;transform:translate(-50%,-100%)}
+.icone-relogio::after{height:6px;transform:translate(-50%,-100%) rotate(90deg)}
+.prazo-personalizados p{margin:0;color:#0d0a18;font-family:var(--font-support);font-size:.98rem;font-weight:800}
+.prazo-personalizados strong{color:#e02c80}
+.texto-personalizados{max-width:330px;margin:0 0 14px;color:#1f1c27;font-family:var(--font-glacial);font-size:1.06rem;line-height:1.38;text-shadow:0 2px 12px rgba(0,0,0,.2)}
+.texto-personalizados strong,.texto-personalizados span{color:#5ce1e6;font-weight:800}
+.preco-personalizados{display:inline-grid;grid-template-columns:44px auto;align-items:stretch;min-height:93px;margin-bottom:26px;border:1px solid rgba(255,255,255,.9);border-radius:20px;overflow:hidden;background:#e02c80;box-shadow:0 16px 32px rgba(0,0,0,.22)}
+.preco-personalizados>span{display:grid;place-items:center;color:#fff;font-family:var(--font-support);font-size:.78rem;font-weight:800;text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg);background:#e02c80}
+.preco-personalizados strong{display:flex;align-items:center;gap:8px;padding:10px 14px;border-left:1px solid rgba(255,255,255,.9);border-radius:20px;color:#e02c80;font-family:var(--font-arimo);font-size:1.24rem;line-height:1;background:#080808}
+.preco-personalizados b{display:inline-block;color:#fff;font-size:clamp(3.2rem,13vw,4.2rem);font-weight:600;line-height:.65;letter-spacing:.025em;transform:scaleX(.82) scaleY(1.18);transform-origin:center}
+.resultado-promessa{justify-self:end;max-width:230px;margin:0;color:#fff;font-family:var(--font-glacial);font-size:.95rem;line-height:1.2;text-align:right;text-transform:none;text-shadow:0 3px 14px rgba(0,0,0,.34);margin-top:45px}
+.resultado-promessa strong{font-weight:800;text-transform:uppercase}
+.resultado-promessa strong.cor-preta{color:#000}

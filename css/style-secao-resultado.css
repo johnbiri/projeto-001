@@ -1,0 +1,30 @@
+.secao-resultado{position:relative;overflow:hidden;color:var(--white);background:url("../assets/images/bg-secao-resultado-mobile-editada.jpg") center top/cover no-repeat,#d7d7d7;isolation:isolate}
+.resultado-fotos{position:absolute;inset:0;display:none;grid-template-columns:1fr 1fr;z-index:-2}
+.resultado-fotos::after{content:"";position:absolute;inset:0 50% 0 auto;width:2px;background:rgba(0,0,0,.82);transform:translateX(50%)}
+.foto-resultado{min-height:100%;filter:grayscale(1);background-color:#cfcfcf;background-position:center;background-size:cover}
+.foto-antes{background-image:url("../assets/images/mulher1-antes.jpg")}
+.foto-depois{background-image:url("../assets/images/mulher1-depois.jpg")}
+.secao-resultado::after{content:"";position:absolute;inset:0;z-index:-1}
+.resultado-conteudo{position:relative;display:grid;min-height:inherit;padding:38px 0 48px;align-content:space-between}
+.chips-resultado{display:flex;justify-content:center;gap:10px;width:100%}
+.chip-resultado{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 13px;border:2px solid rgba(255,255,255,.85);border-radius:12px;color:#fff;font-family:var(--font-headline);font-size:19px;font-weight:500;line-height:1;text-shadow:0 2px 10px rgba(0,0,0,.28);background:rgba(83,87,94,.66);backdrop-filter:blur(4px)}
+.chip-preto{background:#050505}
+.chip-preto strong{margin-right:8px;color:#ff2020;font-weight:700}
+.resultado-textos{display:grid;justify-items:center;text-align:center}
+.resultado-textos h2{margin:0 0 22px;color:#fff;font-family:var(--font-headline);font-size:clamp(4rem,17vw,6.1rem);font-weight:500;line-height:.95;letter-spacing:.01em;text-transform:none;text-shadow:0 4px 22px rgba(0,0,0,.32)}
+.resultado-textos p{margin:0 0 20px;color:#fff;font-family:var(--font-glacial);font-size:18px;font-weight:400;line-height:1;text-transform:uppercase;text-shadow:0 3px 18px rgba(0,0,0,.26)}
+.caixa-dias{display:inline-flex;align-items:baseline;justify-content:center;gap:7px;width:min(100%,320px);padding:22px;border:2px solid rgba(255,255,255,.88);border-radius:13px;color:#fff;font-family:var(--font-arimo);font-size:1.16rem;line-height:1;background:linear-gradient(90deg,#4f73ff 0%,#f553b7 100%);box-shadow:0 16px 36px rgba(0,0,0,.18)}
+.caixa-dias strong{font-size:1.22rem;font-weight:700}
+@media (min-width:768px){
+.secao-resultado{min-height:760px;padding:96px 0 110px;background:url("../assets/images/bg-secao-resultado-desktop.jpg") center right/cover no-repeat,#d7d7d7}
+.secao-resultado::after{display:block;z-index:-1}
+.resultado-conteudo{display:grid;grid-template-columns:minmax(520px,.58fr) minmax(300px,1fr);gap:40px;align-items:start;min-height:0;padding:0}
+.chips-resultado,.resultado-textos{grid-column:1}
+.chips-resultado{display:flex;justify-content:flex-start;gap:22px;margin:118px 0 36px}
+.chip-resultado{min-height:44px;padding:0 20px;border-radius:9px;font-size:19px}
+.resultado-textos{justify-items:start;text-align:left;position:relative}
+.resultado-textos h2{max-width:720px;margin-bottom:24px;font-size:clamp(4.4rem,6vw,7rem);white-space:nowrap}
+.resultado-textos p{margin-bottom:24px;font-size:18px;letter-spacing:.28em}
+.caixa-dias{width:min(100%,455px);justify-content:center;font-size:1.25rem}
+.caixa-dias strong{font-size:1.32rem}
+}

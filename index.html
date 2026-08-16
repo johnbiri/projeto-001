@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090627" />
+    <title>Cintura Fitness | Nova Landing Page</title>
+    <meta
+      name="description"
+      content="Nova landing page da Cintura Fitness em desenvolvimento."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="assets/logo/logo-favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500;600;700&family=Arimo:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-header.css" />
+    <link rel="stylesheet" href="css/style-secao-hero-video.css" />
+    <link rel="stylesheet" href="css/style-secao-resultado.css" />
+    <link rel="stylesheet" href="css/style-secao-personalizados.css" />
+    <link rel="stylesheet" href="css/style-secao-depoimentos.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+    
+    <!-- o header com o botão quero já -->
+    <header class="site-header" aria-label="Cabeçalho principal">
+      <div class="container header-grid">
+        <a class="brand" href="#conteudo" aria-label="Cintura Fitness">
+          <img src="assets/logo/logo-cintura-fitness.png" alt="Cintura Fitness" width="196" height="91" />
+        </a>
+
+        <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+          <a href="#inicio">Início</a>
+          <a href="#programa">Programa</a>
+          <a href="#planos">Pacotes</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <a class="botao-cabecalho" href="#planos">Quero Já!</a>
+        <button class="menu-button" type="button" aria-label="Abrir menu" aria-controls="main-nav" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    
+    <main id="conteudo">
+    
+      <!-- seção video -->
+      <section class="hero-video">
+        <video class="hero-video-bg" muted playsinline preload="auto">
+          <source src="assets/video/video1.mp4" type="video/mp4">
+        </video>
+
+        <video id="heroVideo" playsinline preload="auto">
+          <source src="assets/video/video1.mp4" type="video/mp4">
+          Seu navegador não suporta a exibição deste vídeo.
+        </video>
+
+        <a class="hero-video-cta" href="#planos" aria-label="Ir para a seção Comece agora" hidden></a>
+
+        <button class="hero-video-som" type="button" aria-label="Reproduzir ou pausar vídeo">▶</button>
+      </section>
+
+      <!--
+          <section class="secao-hero" id="inicio" aria-labelledby="titulo-hero">
+            <div class="sobreposicao-hero" aria-hidden="true"></div>
+            <div class="container hero-grid">
+              <div class="conteudo-hero">
+                <h1 class="entrada entrada-titulo" id="titulo-hero">Quantos anos você já perdeu <span>desejando?</span></h1>
+
+                <div class="selo-hero entrada entrada-selo" aria-label="Benefícios em destaque">
+                  <div class="carrossel-selo">
+                    <div class="item-selo ativo" aria-label="Abdômen retinho">
+                      <img class="icone-selo" src="assets/images/icone-hero-carrossel.png" alt="" width="112" height="112" loading="eager" />
+                      <p>Abdômen retinho</p>
+                    </div>
+                    <div class="item-selo" aria-label="Cintura fina">
+                      <img class="icone-selo" src="assets/images/icone-hero-carrossel.png" alt="" width="112" height="112" loading="eager" />
+                      <p>Cintura fina</p>
+                    </div>
+                    <div class="item-selo" aria-label="Fotos espetaculares">
+                      <img class="icone-selo" src="assets/images/icone-hero-carrossel.png" alt="" width="112" height="112" loading="eager" />
+                      <p>Fotos espetaculares</p>
+                    </div>
+                    <div class="item-selo" aria-label="Autoestima">
+                      <img class="icone-selo" src="assets/images/icone-hero-carrossel.png" alt="" width="112" height="112" loading="eager" />
+                      <p>Autoestima</p>
+                    </div>
+                  </div>
+                </div>
+
+                <p
+                  class="texto-hero entrada entrada-texto"
+                  data-texto-inicial="Seu corpo conta uma história."
+                  data-texto-final="Está na hora de escrever o"
+                  data-texto-destaque="melhor capítulo"
+                  aria-label="Seu corpo conta uma história. Está na hora de escrever o melhor capítulo"
+                >
+                  <span class="cursor-escrita" aria-hidden="true"></span>
+                </p>
+
+                <a class="chamada-scroll entrada entrada-scroll" href="#programa" aria-label="Ir para a próxima seção">
+                  <span>CLIQUE aqui</span>
+                  <strong>↓</strong>
+                </a>
+
+                <a class="botao-hero entrada entrada-botao" href="#planos">Minha versão Musa</a>
+              </div>
+            </div>
+          </section>
+    -->
+      
+      <!-- seção resultado -->
+      <section class="secao-resultado" id="resultado-45-dias" aria-labelledby="resultado-titulo">
+        <div class="resultado-fotos" aria-hidden="true">
+          <div class="foto-resultado foto-antes"></div>
+          <div class="foto-resultado foto-depois"></div>
+        </div>
+
+        <div class="container resultado-conteudo">
+          <div class="chips-resultado entrada-secao">
+            <span class="chip-resultado chip-preto"><strong>-</strong> 10 Kg !</span>
+            <span class="chip-resultado">+ autoestima</span>
+            <span class="chip-resultado">Roupas novas</span>
+          </div>
+
+          <div class="resultado-textos entrada-secao">
+            <h2 id="resultado-titulo">Sabe o que ela fez ?</h2>
+            <p>Participou do</p>
+            <div class="caixa-dias" aria-label="Musa Fitness por 45 dias">
+              <span>Musa Fitness por</span>
+              <strong><span class="contador-dias" data-contador-final="45">0</span> dias</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- seção personalizados -->
+      <section class="secao-personalizados" id="programa" aria-labelledby="personalizados-titulo">
+        <div class="marca-dagua marca-dagua-esquerda" aria-hidden="true"></div>
+        <div class="marca-dagua marca-dagua-direita" aria-hidden="true"></div>
+
+        <div class="container personalizados-conteudo">
+          <div class="lista-beneficios entrada-secao" aria-label="Itens personalizados do programa">
+            <article class="beneficio-personalizado">
+              <img src="assets/icons/icone-dieta.png" alt="" width="58" height="58" loading="lazy" />
+              <span>Dieta</span>
+            </article>
+            <article class="beneficio-personalizado">
+              <img src="assets/icons/icone-treino.png" alt="" width="58" height="58" loading="lazy" />
+              <span>Treino</span>
+            </article>
+            <article class="beneficio-personalizado">
+              <img src="assets/icons/icone-cardio.png" alt="" width="58" height="58" loading="lazy" />
+              <span>Cardio</span>
+            </article>
+            <article class="beneficio-personalizado">
+              <img src="assets/icons/icone-orientacao.png" alt="" width="58" height="58" loading="lazy" />
+              <span>Orientação</span>
+            </article>
+          </div>
+
+          <div class="titulo-personalizados entrada-secao">
+            <span aria-hidden="true"></span>
+            <h2 id="personalizados-titulo">Personalizados <small>p/</small><br />teu <strong>emagrecimento</strong></h2>
+            <span aria-hidden="true"></span>
+          </div>
+
+          <div class="prazo-personalizados entrada-secao">
+            <span class="icone-relogio" aria-hidden="true"></span>
+            <p>Em <strong>24h</strong> úteis</p>
+          </div>
+
+          <p class="texto-personalizados entrada-secao">
+            Este é o <strong>Musa Fitness</strong>, a estratégia de transformação de mulheres em uma
+            <span>versão avassaladora.</span>
+          </p>
+
+          <div class="preco-personalizados entrada-secao" aria-label="Preço a partir de R$ 159,90">
+            <span>Apenas</span>
+            <strong>R$ <b>159,90</b></strong>
+          </div>
+
+          <p class="resultado-promessa entrada-secao">
+            <strong class="cor-preta">Sem</strong> promessas,<br />
+            entregamos <strong>resultados !</strong>
+          </p>
+        </div>
+      </section>
+
+      <!-- seção depoimentos -->
+      <section class="secao-depoimentos" id="depoimentos" aria-labelledby="depoimentos-titulo">
+        <div class="container depoimentos-conteudo">
+          <div class="depoimentos-topo entrada-secao">
+            <h2 id="depoimentos-titulo">Quem tinha dúvida, <span>hoje indica!</span></h2>
+          </div>
+
+          <p class="depoimentos-texto-vertical entrada-secao">
+            Nossos depoimentos são reais, identificados e autorizados.<br/>
+            Não simulamos transformações para te impressionar.
+          </p>
+
+          <div class="depoimentos-palco entrada-secao" aria-label="Depoimentos em carrossel">
+            <button class="seta-depoimento seta-anterior" type="button" aria-label="Depoimento anterior">‹</button>
+            <div class="depoimentos-faixa">
+              <article class="depoimento-card ativo">
+                <img src="assets/images/depoimento4.jpg" alt="Depoimento 1" />
+              </article>
+              <article class="depoimento-card proximo">
+                <img src="assets/images/depoimento5.jpg" alt="Depoimento 2" />
+              </article>
+              <article class="depoimento-card">
+                <img src="assets/images/depoimento3.jpg" alt="Depoimento 3" />
+              </article>
+              <article class="depoimento-card">
+                <img src="assets/images/depoimento1.jpg" alt="Depoimento 4" />
+              </article>
+              <article class="depoimento-card">
+                <img src="assets/images/depoimento2.jpg" alt="Depoimento 5" />
+              </article>
+            </div>
+            <button class="seta-depoimento seta-proximo" type="button" aria-label="Próximo depoimento">›</button>
+          </div>
+
+          <a class="botao-depoimentos entrada-secao" href="#planos">Quero tudo isso</a>
+        </div>
+      </section>
+
+      <section class="secao-como-funciona" id="como-funciona" aria-labelledby="como-funciona-titulo">
+        <div class="container como-funciona-conteudo">
+          <div class="como-funciona-bloco entrada-secao">
+            <h2 class="como-funciona-titulo" id="como-funciona-titulo">Como funciona ?</h2>
+            <img src="assets/images/linha-titulos.png" alt="Linha dos Títulos" />
+
+            <ol class="lista-como-funciona" aria-label="Etapas do método">
+              <li>
+                <span class="numero-passo">1.</span>
+                <strong>Você se inscreve</strong>
+              </li>
+              <li>
+                <span class="numero-passo">2.</span>
+                <strong>Avaliamos teus dados</strong>
+              </li>
+              <li>
+                <span class="numero-passo">3.</span>
+                <strong>Elaboramos teu plano</strong>
+              </li>
+              <li>
+                <span class="numero-passo">4.</span>
+                <strong>Enviamos em 24h úteis</strong>
+              </li>
+            </ol>
+          </div>
+
+          <div class="alerta-como-funciona entrada-secao">
+            <p>
+              <strong>Dietas genéricas</strong> falham, pois <strong>não usam teus dados.</strong>
+              <span>Nós <b>NÃO</b> cometemos esse erro !</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="secao-voce-recebera" id="voce-recebera" aria-labelledby="voce-recebera-titulo">
+        <div class="container voce-recebera-conteudo">
+          <div class="voce-recebera-textos entrada-secao">
+            <h2 class="voce-recebera-titulo" id="voce-recebera-titulo">
+              Prepare o <span aria-hidden="true">❤</span>
+            </h2>
+            <p class="voce-recebera-subtitulo"><strong>Você</strong> receberá o:</p>
+            <img src="assets/images/linha-branca.png" alt="Linha dos Títulos" class="linha-abaixo-titulo" />
+
+            <div class="personalizado-recebera">
+              <h3>Personalizado com</h3>
+              <ul class="lista-recebera">
+                <li>Dieta</li>
+                <li>Cardio</li>
+                <li>Treino</li>
+                <li>Orientações</li>
+              </ul>
+            </div>
+
+            <div class="dados-recebera entrada-secao">
+              <p>Altura, idade, peso, nº de refeições por dia, dias de treino por semana. <strong>Usamos tudo na personalização</strong></p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="secao-equipe-tecnica" id="equipe-tecnica" aria-labelledby="equipe-tecnica-titulo">
+        <div class="container equipe-tecnica-conteudo">
+          <div class="equipe-cabecalho entrada-secao">
+            <h2 id="equipe-tecnica-titulo">O Manual da <strong>Musa Fitness</strong> é</h2>
+            <p>a tua consultoria de elite em emagrecimento sem valores estratosféricos !</p>
+            <img src="assets/images/linha-titulos.png" alt="Linha dos Títulos" />
+          </div>
+
+          <div class="grid-equipe entrada-secao" aria-label="Equipe técnica Musa Fitness">
+            <article class="profissional-equipe">
+              <img src="assets/images/allan.jpg" alt="Allan, nutricionista, treinador e fisiculturista">
+              <h3>Ailton</h3>
+              <p><strong>Nutricionista</strong>, treinador e <strong>fisiculturista</strong></p>
+              <span>CRN: 5.3218</span>
+            </article>
+            <article class="profissional-equipe">
+              <img src="assets/images/poliana.jpg" alt="Poliana, acadêmica de nutrição e adepta da vida fitness">
+              <h3>Poliana</h3>
+              <p>Acadêmica de <strong>nutrição</strong> e adepta da vida fitness</p>
+            </article>
+            <article class="profissional-equipe">
+              <img src="assets/images/arthur.jpg" alt="Arthur, treinador especializado no público feminino">
+              <h3>Arthur</h3>
+              <p><strong>Treinador</strong> especializado no público feminino</p>
+              <span>CREF: 017431</span>
+            </article>
+            <article class="profissional-equipe">
+              <img src="assets/images/yuri.jpg" alt="Yuri, pós em química e fisiculturista">
+              <h3>Yuri</h3>
+              <p><strong>PhD em química</strong> e fisiculturista.</p>
+            </article>
+          </div>
+
+        </div>
+        <strong class="texto-vertical-equipe" aria-hidden="true">Equipe técnica</strong>
+      </section>
+
+      <section class="secao-planos" id="planos" aria-labelledby="planos-titulo">
+        <div class="container planos-conteudo">
+          <div class="planos-cabecalho entrada-secao">
+            <h2 id="planos-titulo">Comece agora !</h2>
+            <p>Você já tentou do seu jeito.</p>
+            <p>Agora <strong>acerte</strong> com <strong>orientação !</strong></p>
+          </div>
+
+          <div class="cards-planos entrada-secao" aria-label="Pacotes Musa Fitness">
+            <a class="card-plano plano-mensal" href="https://www.cinturafitness.com.br/" aria-label="Comprar plano mensal Musa Fitness por R$ 159,90">
+              <h3>Musa Fitness</h3>
+              <span>(mensal)</span>
+              <p>De <strong>R$ 249,90</strong><br>por</p>
+              <div class="preco-plano">R$ 159,90</div>
+              <b>(36% OFF)</b>
+            </a>
+
+            <a class="card-plano plano-trimestral" href="https://www.cinturafitness.com.br/" aria-label="Comprar plano trimestral Musa Fitness em 3 vezes de R$ 134,90">
+              <span class="selo-plano">Mais escolhido</span>
+              <h3>Musa Fitness</h3>
+              <span>(trimestral)</span>
+              <p>De <strong>R$ 749,70</strong><br>por</p>
+              <small>3x</small>
+              <div class="preco-plano">R$ 134,90</div>
+              <b>(46% OFF)</b>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="secao-faq" id="faq" aria-labelledby="faq-titulo">
+        <div class="container faq-conteudo">
+          <div class="faq-cabecalho entrada-secao">
+            <p>Tem dúvida ?</p>
+            <h2 id="faq-titulo">A gente explica.</h2>
+            <img src="assets/images/linha-titulos.png" alt="Linha dos Títulos" />
+          </div>
+
+          <div class="lista-faq entrada-secao">
+            <article class="item-faq">
+              <h3>
+                <button class="pergunta-faq" type="button" aria-expanded="false" aria-controls="resposta-faq-1" id="pergunta-faq-1">
+                  <span><strong>1.</strong> Como são feitas a dieta e treino?</span>
+                  <i aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="resposta-faq" id="resposta-faq-1" role="region" aria-labelledby="pergunta-faq-1">
+                <p>As dietas são elaboradas com alimentos acessíveis e refeições de preparo rápido, 5 min a 10 min cada. Uma refeição completa custa em média R$ 5 para preparar. As dietas possuem 4, 5 ou 6 <b>refeições</b> por dia, <b>você escolhe</b> a quantidade. E cada refeição tem <b>5 ou 6 opções</b> pra você variar e não enjoar. As dietas também possuem uma <b>sessão de TPM</b> com doces especialmente elaborados para você encarar os dias difíceis, rs. Os treinos possuem exercícios focados no público feminino. São elaborados com 4, 5 ou 6 dias de <b>treino</b> semanais, <b>você escolhe</b> a quantidade de <b>dias</b>. Já enviamos a programação mensal dos dias de treino e de descanso. Também há uma guia com as orientações essenciais pro você entender o teu treino.</p>
+              </div>
+            </article>
+
+            <article class="item-faq">
+              <h3>
+                <button class="pergunta-faq" type="button" aria-expanded="false" aria-controls="resposta-faq-2" id="pergunta-faq-2">
+                  <span><strong>2.</strong> O que é o cardio personalizado?</span>
+                  <i aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="resposta-faq" id="resposta-faq-2" role="region" aria-labelledby="pergunta-faq-2">
+                <p>Personalizamos os <b>tempos de execução</b> das modalidades sugeridas (<b>bicicleta ou esteira ou escada</b>) de acordo com teus dados corporais. Você pode escolher o que mais te agrada e variar. O cardio é <b>ESSENCIAL</b> no emagrecimento. Ele promove a biogênese mitocondrial melhorando a queima de gordura, por isso incluímos em todos os planos de emagrecimento.</p>
+              </div>
+            </article>
+
+            <article class="item-faq">
+              <h3>
+                <button class="pergunta-faq" type="button" aria-expanded="false" aria-controls="resposta-faq-3" id="pergunta-faq-3">
+                  <span><strong>3.</strong> Há dia do lixo (refeição livre)?</span>
+                  <i aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="resposta-faq" id="resposta-faq-3" role="region" aria-labelledby="pergunta-faq-3">
+                <p>Sim, sugerimos <b>1 refeição livre</b> por semana. Atenção: é 1 refeição não um dia todo, rs. Mas desrecomendamos qualquer tipo de rodízio, pois eles podem facilmente anular todo teu esforço semanal.</p>
+              </div>
+            </article>
+
+            <article class="item-faq">
+              <h3>
+                <button class="pergunta-faq" type="button" aria-expanded="false" aria-controls="resposta-faq-4" id="pergunta-faq-4">
+                  <span><strong>4.</strong> Por que vocês são diferentes?</span>
+                  <i aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="resposta-faq" id="resposta-faq-4" role="region" aria-labelledby="pergunta-faq-4">
+                <p><b>Não usamos dietas genéricas</b> para as nossas pacientes. Nossos planos alimentares e treinos são personalizados com teus dados, por isso pedimos até 24h ÚTEIS para enviar. Nossa intenção é viabilizar o desejo de mudança corporal feminino com um serviço de alto padrão a valores acessíveis. Importante destacar que por ser um serviço de elevada demanda e termos uma equipe dedicada a homologar as dietas, treinos e cardios, <b>temos um limite diário de vendas.</b></p>
+              </div>
+            </article>
+
+            <article class="item-faq">
+              <h3>
+                <button class="pergunta-faq" type="button" aria-expanded="false" aria-controls="resposta-faq-5" id="pergunta-faq-5">
+                  <span><strong>5.</strong> Como funciona o plano trimestral?</span>
+                  <i aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="resposta-faq" id="resposta-faq-5" role="region" aria-labelledby="pergunta-faq-5">
+                <p>Você se inscreve e insere teus dados. Em 24h úteis, você receberá sua dieta, treino e cardio personalizados. A meta é fazer você reduzir pelo menos 1% no teu percentual de gordura ou 1Kg na massa corporal em pelo menos 30 dias. Mas 1Kg não é pouco? Não, pois consideramos também o ganho de massa muscular. No plano trimestral, após 30 dias você preenche teu CPF no formulário de inscrição, o sistema reconhecerá teu plano, dispensará nova cobrança e solicitará a atualização dos teus dados. Caso haja redução de pelo menos 1Kg na massa corporal, você estará apta à nova dieta e cardio. Caso não esteja, o sistema recomendará a manutenção da dieta e cardio anteriores por mais 30 dias, porém você tem a opção de acelerar o emagrecimento e pedir a atualização. O plano trimestral garante 3 dietas e 3 cardios atualizados ao longo de 6 meses. Ou seja, se você não conseguiu seguir a dieta por alguma viagem, questão de saúde ou trabalho e deseja estender um pouco mais o plano alimentar anterior, não tem problema. Você pode atualizar a qualquer momento dentro do período de 6 meses. Após 6 meses, teu plano expira.</p>
+              </div>
+            </article>
+
+            <article class="item-faq">
+              <h3>
+                <button class="pergunta-faq" type="button" aria-expanded="false" aria-controls="resposta-faq-6" id="pergunta-faq-6">
+                  <span><strong>6.</strong> Há garantia de emagrecimento?</span>
+                  <i aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="resposta-faq" id="resposta-faq-6" role="region" aria-labelledby="pergunta-faq-6">
+                <p>Seríamos levíanos se garantíssemos isso. E ninguém pode te garantir. Porém, temos uma alta adesão aos nossos planos de emagrecimento, pois seguimos TODOS os requisitos técnicos e nutricionais para <b>maximizar a saciedade</b> e perda de peso, <b>minimizando</b> a percepção de <b>fome</b>. Nossa equipe possui décadas de experiência e entende plenamente as dificuldades de pessoas comuns a atletas de fisiculturismo. Muitas participantes, inclusive, relatam que <b>há muita comida</b> e têm dificuldade em comer todas as refeições <b>e, ainda assim, emagrecem.</b></p>
+              </div>
+            </article>
+
+            <article class="item-faq">
+              <h3>
+                <button class="pergunta-faq" type="button" aria-expanded="false" aria-controls="resposta-faq-7" id="pergunta-faq-7">
+                  <span><strong>7.</strong> Existe multa para cancelamento?</span>
+                  <i aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="resposta-faq" id="resposta-faq-7" role="region" aria-labelledby="pergunta-faq-7">
+                <p><b>Não há multa</b> nem taxa para cancelamento, <b>estamos aqui para te ajudar.</b> Oferecemos garantia de satisfação de 7 dias, caso não fique satisfeita, basta entrar em contato pelo e-mail <i>cinturafitnessoficial@gmail.com</i> informando o CPF utilizado na compra e nome completo na mensagem. Se puder nos dizer o motivo do cancelamento, ficaremos muito agradecidos, isso nos ajuda a melhorar nossos serviços.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="secao-garantia" id="garantia" aria-labelledby="garantia-titulo">
+        <div class="container garantia-conteudo">
+          <div class="selo-garantia-bloco entrada-secao">
+            <img src="assets/images/selo-garantia.png" alt="Garantia de 7 dias">
+          </div>
+
+          <div class="garantia-textos entrada-secao">
+            <div class="caixa-garantia">
+              <h2 id="garantia-titulo"><strong>Confiamos</strong> tanto na nossa qualidade que você tem acesso TOTAL durante <span>7 dias.</span></h2>
+            </div>
+            <p>Se não ficar satisfeita, <strong>Devolvemos 100% do valor pago.</strong></p>
+            <img src="assets/images/linha-titulos.png" alt="Linha dos Títulos" />
+          </div>
+        </div>
+        <strong class="texto-vertical-garantia" aria-hidden="true">Garantia</strong>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Copyright © 2026 Cintura Fitness. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+    <script src="js/script-secao-hero-video.js" defer></script>
+    <script src="js/script-section-animation.js" defer></script>
+    <script src="js/script-header.js" defer></script>
+    <script src="js/script-section-depoimentos.js" defer></script>
+
+  </body>
+</html>
