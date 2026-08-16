@@ -400,22 +400,48 @@
           <div data-resposta-id="7"><p><b>Não há multa</b> nem taxa para cancelamento, <b>estamos aqui para te ajudar.</b> Oferecemos garantia de satisfação de 7 dias, caso não fique satisfeita, basta entrar em contato pelo e-mail <i>cinturafitnessoficial@gmail.com</i> informando o CPF utilizado na compra e nome completo na mensagem. Se puder nos dizer o motivo do cancelamento, ficaremos muito agradecidos, isso nos ajuda a melhorar nossos serviços.</p></div>
         </div>
       </section>
-
+  
       <!-- seção garantia -->
       <section class="secao-garantia" id="garantia" aria-labelledby="garantia-titulo">
         <div class="container garantia-conteudo">
           <div class="selo-garantia-bloco entrada-secao">
             <img src="assets/images/selo-garantia.png" alt="Garantia de 7 dias">
           </div>
+
           <div class="garantia-textos entrada-secao">
             <div class="caixa-garantia">
-              <h2 id="garantia-titulo"><strong>Confiamos</strong> tanto na nossa qualidade que você tem acesso TOTAL durante <span>7 dias.</span></h2>
+              <h2 id="garantia-titulo">
+                <strong>Confiamos</strong> tanto na nossa qualidade que você tem acesso TOTAL durante <span>7 dias.</span>
+              </h2>
             </div>
-            <p>Se não ficar satisfeita, <strong>Devolvemos 100% do valor pago.</strong></p>
+
+            <p>
+              Se não ficar satisfeita,
+              <strong>Devolvemos 100% do valor pago.</strong>
+            </p>
+
             <img src="assets/images/linha-titulos.png" alt="Linha dos Títulos">
+
+            <button class="botao-cancelamento" type="button" aria-label="Ver informações sobre cancelamento">
+              <img src="assets/images/email-icon.png" alt="">
+            </button>
           </div>
         </div>
+
         <strong class="texto-vertical-garantia entrada-secao" aria-hidden="true">Garantia</strong>
+
+        <div class="modal-cancelamento" id="modal-cancelamento" aria-hidden="true">
+          <div class="modal-cancelamento-overlay"></div>
+          <div class="modal-cancelamento-caixa" role="dialog" aria-modal="true" aria-labelledby="modal-cancelamento-titulo">
+            <button class="modal-cancelamento-fechar" type="button" aria-label="Fechar">×</button>
+            <h2 id="modal-cancelamento-titulo">Cancelamento</h2>
+            <div class="modal-cancelamento-texto">
+              <p><em>Estamos aqui para te ajudar, por isso oferecemos a garantia de satisfação de <strong>7 dias.</strong></em></p>
+              <p><em>Caso não fique satisfeita, basta entrar em contato pelo e-mail <strong>cinturafitnessoficial@gmail.com</strong> informando o CPF utilizado na compra e o nome completo na mensagem.</em></p>
+              <p><em>Se puder nos dizer o motivo do cancelamento, ficaremos muito agradecidos, isso nos ajuda a melhorar nossos serviços.</em></p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -432,6 +458,7 @@
     <script src="js/script-section-depoimentos.js?v=7" defer></script>
     <script src="js/script-secao-planos.js?v=7" defer></script>
     <script src="js/script-secao-faq.js?v=7" defer></script>
+    <script src="js/script-section-garantia.js?v=7" defer></script>
 
   </body>
 </html>

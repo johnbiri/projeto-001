@@ -1,18 +1,41 @@
 .secao-garantia{position:relative;overflow:hidden;padding:75px 0;color:#fff;background:url("../assets/images/bg-garantia.jpg") center/cover no-repeat;}
-.garantia-conteudo{position:relative;left:-18px;z-index:2;display:grid;justify-items:center;gap:26px;width:calc(100% - 12px);margin-left:6px;transform:scale(.84);transform-origin:left top;}
+.garantia-conteudo{position:relative;left:-18px;top:-40px;z-index:2;display:grid;justify-items:center;gap:26px;width:calc(100% - 12px);margin-left:6px;transform:scale(.84);transform-origin:left top;}
 .selo-garantia-bloco{display:grid;place-items:center;}
 .selo-garantia-bloco img{width:min(430px,66vw);filter:drop-shadow(0 18px 24px rgba(0,0,0,.45));}
 .garantia-textos{display:grid;justify-items:center;width:min(100%,350px);text-align:center;}
-.caixa-garantia{width:min(100%,320px);padding:10px 5px 10px;border:1px solid rgba(255,255,255,.74);border-radius:15px;background:rgba(255,255,255,.07);backdrop-filter:blur(2px);}
+.caixa-garantia{width:min(100%,320px);padding:10px 5px;border:1px solid rgba(255,255,255,.74);border-radius:15px;background:rgba(255,255,255,.07);backdrop-filter:blur(2px);}
 .caixa-garantia h2{margin:0;color:#fff;font-family:var(--font-headline);font-size:clamp(1.08rem,4.5vw,1.34rem);font-weight:400;line-height:1.24;letter-spacing:0;text-transform:none;}
 .caixa-garantia strong{font-weight:900;color:#000;}
 .caixa-garantia span{display:block;margin-top:6px;color:#e02c80;font-size:1.5em;font-weight:900;}
 .garantia-textos>p{max-width:310px;margin:28px 0 11px;color:#fff;font-family:var(--font-headline);font-size:clamp(1.2rem,5.5vw,1.65rem);font-weight:400;line-height:1.16;text-shadow:0 4px 16px rgba(0,0,0,.5);}
 .garantia-textos>p strong{display:block;font-weight:900;}
-.pincel-garantia{display:block;width:min(265px,76vw);height:10px;border-radius:999px;background:#c52380;box-shadow:inset 18px 0 0 rgba(255,255,255,.14);transform:rotate(-2deg) skewX(-13deg);}
-.texto-vertical-garantia{position:absolute;right:-30px;top:45px;z-index:1;color:rgba(0,0,0,.72);font-family:var(--font-headline);font-size:165px;font-weight:900;line-height:.82;text-transform:uppercase;writing-mode:sideways-lr;letter-spacing:-3px;opacity:.72;}
+.garantia-textos>img{display:block;width:min(265px,76vw);height:auto;}
+.botao-cancelamento{display:grid;place-items:center;width:68px;height:68px;padding:0;margin:14px 0 0;border:0;background:transparent;cursor:pointer;appearance:none;-webkit-appearance:none;-webkit-tap-highlight-color:transparent;transition:transform .2s ease;}
+.botao-cancelamento img{display:block;width:68px;height:68px;object-fit:contain;pointer-events:none;}
+.botao-cancelamento:hover{transform:scale(1.07);}
+.botao-cancelamento:active{transform:scale(.94);}
+.botao-cancelamento:focus{outline:0;}
+.botao-cancelamento:focus-visible{outline:2px solid #ff1c9a;outline-offset:4px;border-radius:8px;}
+.texto-vertical-garantia{position:absolute;right:-30px;top:5px;z-index:1;color:rgba(0,0,0,.72);font-family:var(--font-headline);font-size:165px;font-weight:900;line-height:.82;text-transform:uppercase;writing-mode:sideways-lr;letter-spacing:-3px;opacity:.72;}
 .texto-vertical-garantia.visivel{animation:piscar-garantia .65s ease-in-out 1;}
 @keyframes piscar-garantia{0%,100%{opacity:.72;}25%{opacity:.05;}50%{opacity:.72;}75%{opacity:.05;}}
-@media (min-width:768px){.garantia-conteudo{left:-18px;width:calc(100% - 12px);margin-left:6px;transform:scale(.84);}}
-@media (max-width:767px){.garantia-conteudo{left:-18px;width:calc(100% - 12px);margin-left:6px;transform:scale(.84);}}
-@media (prefers-reduced-motion:reduce){.texto-vertical-garantia{animation:none;opacity:.72;}}
+.modal-cancelamento{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;}
+.modal-cancelamento.aberto{display:flex;}
+.modal-cancelamento-overlay{position:absolute;inset:0;background:rgba(9,6,39,.72);backdrop-filter:blur(6px);}
+.modal-cancelamento-caixa{position:relative;z-index:1;width:min(100%,430px);max-height:85vh;overflow-y:auto;padding:42px 28px 30px;border:2px solid #ff1c9a;border-radius:20px;background:#fff;box-shadow:0 25px 70px rgba(0,0,0,.4);text-align:center;animation:entradaModalCancelamento .3s cubic-bezier(.22,.61,.36,1) both;}
+.modal-cancelamento-caixa h2{margin:0 0 24px;color:#ff1c9a;font-family:var(--font-headline);font-size:34px;font-weight:900;line-height:1;text-align:center;}
+.modal-cancelamento-texto{width:100%;margin:0;color:#090627;font-family:var(--font-body);font-size:14px;font-weight:400;line-height:1.6;text-align:center;}
+.modal-cancelamento-texto p{margin:0 0 18px;text-align:center;}
+.modal-cancelamento-texto p:last-child{margin-bottom:0;}
+.modal-cancelamento-texto strong{font-weight:900;}
+.modal-cancelamento-texto em{font-style:italic;}
+.modal-cancelamento-fechar{position:absolute;top:10px;right:10px;z-index:2;display:flex;align-items:center;justify-content:center;width:38px;height:38px;padding:0;border:2px solid #ff1c9a;border-radius:50%;color:#ff1c9a;background:#fff;font-family:Arial,sans-serif;font-size:27px;font-weight:400;line-height:38px;text-align:center;cursor:pointer;appearance:none;-webkit-appearance:none;-webkit-tap-highlight-color:transparent;}
+.modal-cancelamento-fechar:hover{color:#fff;background:#ff1c9a;}
+.modal-cancelamento-fechar:active{transform:scale(.94);}
+.modal-cancelamento-fechar:focus{outline:0;}
+.modal-cancelamento-fechar:focus-visible{outline:2px solid #ff1c9a;outline-offset:3px;}
+@keyframes entradaModalCancelamento{from{opacity:0;transform:translateY(15px) scale(.96);}to{opacity:1;transform:translateY(0) scale(1);}}
+@media(min-width:768px){.garantia-conteudo{left:-18px;top:-40px;width:calc(100% - 12px);margin-left:6px;transform:scale(.84);}}
+@media(max-width:767px){.garantia-conteudo{left:-18px;top:-40px;width:calc(100% - 12px);margin-left:6px;transform:scale(.84);}}
+@media(max-width:480px){.modal-cancelamento{padding:15px;}.modal-cancelamento-caixa{width:100%;padding:38px 20px 26px;border-radius:18px;}.modal-cancelamento-caixa h2{font-size:30px;margin-bottom:20px;}.modal-cancelamento-texto{font-size:13px;line-height:1.55;}}
+@media(prefers-reduced-motion:reduce){.texto-vertical-garantia{animation:none;opacity:.72;}.botao-cancelamento,.modal-cancelamento-caixa,.modal-cancelamento-fechar{transition:none;animation:none;}}
