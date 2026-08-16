@@ -7,6 +7,7 @@ const botao=document.querySelector(".botao-cabecalho");
 if(!sections.length)return;
 
 let atual=0,bloqueado=false;
+let animacaoId=null;
 
 // Atualiza a cor do botão
 const atualizarBotao=()=>{
@@ -23,15 +24,27 @@ const irPara=i=>{
 
  const h=document.querySelector(".site-header")?.offsetHeight||0;
  const destino=sections[i].getBoundingClientRect().top+scrollY-h;
- const inicio=scrollY,dist=destino-inicio,t0=performance.now();
+ const inicio=scrollY;
+ const dist=destino-inicio;
+ const t0=performance.now();
+ const duracao=140;
 
  const animar=t=>{
-  const p=Math.min((t-t0)/300,1),e=1-Math.pow(1-p,3);
+  const p=Math.min((t-t0)/duracao,1);
+  const e=1-Math.pow(1-p,3);
+
   scrollTo(0,inicio+dist*e);
-  p<1?requestAnimationFrame(animar):setTimeout(()=>bloqueado=false,50);
+
+  if(p<1){
+   animacaoId=requestAnimationFrame(animar);
+  }else{
+   animacaoId=null;
+   bloqueado=false;
+  }
  };
 
- requestAnimationFrame(animar);
+ if(animacaoId)cancelAnimationFrame(animacaoId);
+ animacaoId=requestAnimationFrame(animar);
 };
 
 // Links: troca lateral rápida
@@ -49,11 +62,11 @@ const linkPara=i=>{
  const destino=sections[i].getBoundingClientRect().top+scrollY-h;
  const main=document.querySelector("main")||document.body;
 
- main.style.transition="transform .18s ease,opacity .18s ease";
+ main.style.transition="transform .08s ease,opacity .08s ease";
  main.style.transform=`translateX(${-40*direcao}px)`;
  main.style.opacity=".2";
 
- setTimeout(()=>{
+ requestAnimationFrame(()=>{
   document.documentElement.style.scrollBehavior="auto";
   scrollTo(0,destino);
 
@@ -61,17 +74,18 @@ const linkPara=i=>{
   main.style.transform=`translateX(${40*direcao}px)`;
 
   requestAnimationFrame(()=>{
-   main.style.transition="transform .18s ease,opacity .18s ease";
+   main.style.transition="transform .08s ease,opacity .08s ease";
    main.style.transform="translateX(0)";
    main.style.opacity="1";
 
-   setTimeout(()=>{
+   requestAnimationFrame(()=>{
     main.style.transition="";
     main.style.transform="";
+    main.style.opacity="";
     bloqueado=false;
-   },180);
+   });
   });
- },180);
+ });
 };
 
 // Roda
@@ -89,7 +103,10 @@ addEventListener("touchstart",e=>{
 
 addEventListener("touchend",e=>{
  const d=y-e.changedTouches[0].clientY;
- if(Math.abs(d)>40)irPara(atual+(d>0?1:-1));
+
+ if(Math.abs(d)>40){
+  irPara(atual+(d>0?1:-1));
+ }
 },{passive:true});
 
 // Links internos
@@ -108,7 +125,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",
   const h=document.querySelector(".site-header")?.offsetHeight||0;
   const destino=alvo.getBoundingClientRect().top+scrollY-h;
 
-  scrollTo({top:destino,behavior:"smooth"});
+  document.documentElement.style.scrollBehavior="auto";
+  scrollTo(0,destino);
   return;
  }
 
