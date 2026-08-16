@@ -9,6 +9,8 @@ if(!sections.length)return;
 let atual=0,bloqueado=false;
 let animacaoId=null;
 
+const modalAberto=()=>document.querySelector(".faq-modal")?.classList.contains("aberto");
+
 // Atualiza a cor do botão
 const atualizarBotao=()=>{
  botao?.classList.toggle("is-colorido",atual===0);
@@ -90,6 +92,7 @@ const linkPara=i=>{
 
 // Roda
 addEventListener("wheel",e=>{
+ if(modalAberto())return;
  e.preventDefault();
  irPara(atual+(e.deltaY>0?1:-1));
 },{passive:false});
@@ -98,10 +101,13 @@ addEventListener("wheel",e=>{
 let y=0;
 
 addEventListener("touchstart",e=>{
+ if(modalAberto())return;
  y=e.touches[0].clientY;
 },{passive:true});
 
 addEventListener("touchend",e=>{
+ if(modalAberto())return;
+
  const d=y-e.changedTouches[0].clientY;
 
  if(Math.abs(d)>40){
@@ -111,6 +117,8 @@ addEventListener("touchend",e=>{
 
 // Links internos
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{
+ if(modalAberto())return;
+
  const href=a.getAttribute("href");
  const alvo=document.querySelector(href);
  if(!alvo)return;
