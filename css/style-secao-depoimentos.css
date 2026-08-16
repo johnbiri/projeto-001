@@ -3,9 +3,9 @@
 .secao-depoimentos::before{inset:0;z-index:0;background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.2),transparent 26%),linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,.26));}
 .secao-depoimentos::after{inset:auto 0 0;z-index:1;height:34%;background:linear-gradient(180deg,transparent,rgba(255,255,255,.46));}
 .depoimentos-conteudo{position:relative;z-index:2;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;}
-.depoimentos-topo{position:absolute;z-index:5;top:12px;left:0;width:100%;display:flex;justify-content:center;text-align:center;margin:0;}
-.depoimentos-topo h2{margin:0;color:#fff;font-family:var(--font-headline);font-size:40px;font-weight:700;line-height:.84;text-align:center;text-shadow:0 2px 18px rgba(255,255,255,.72);}
-.depoimentos-topo h2 span{display:block;margin-top:15px;color:#000;font-size:64px;}
+.depoimentos-topo{position:absolute;z-index:5;top:4px;left:0;width:100%;display:flex;justify-content:center;text-align:center;margin:0;}
+.depoimentos-topo h2{margin:0;color:#fff;font-family:var(--font-headline);font-size:34px;font-weight:700;line-height:.84;text-align:center;text-shadow:0 2px 18px rgba(255,255,255,.72);}
+.depoimentos-topo h2 span{display:block;margin-top:12px;color:#000;font-size:56px;}
 .depoimentos-texto-vertical{position:absolute;z-index:4;left:10px;top:50%;width:26px;height:320px;max-height:320px;margin:0;color:#111018;font-family:var(--font-support);font-size:10px;font-weight:900;line-height:1.25;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);text-align:center;overflow:hidden;}
 .depoimentos-palco{position:absolute;z-index:3;top:50%;left:50%;width:min(90vw,520px);height:430px;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;overflow:visible;touch-action:pan-y;}
 .depoimentos-faixa{position:relative;width:320px;height:340px;padding:0;margin:0;display:block;}
