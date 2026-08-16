@@ -15,12 +15,21 @@ const itensFaq=document.querySelectorAll(".item-faq");
 const reduzirMovimento=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let contadorIniciado=false;
 
+const atualizarAlturaHeader=()=>{
+ if(!header)return;
+ document.documentElement.style.setProperty("--altura-header",`${header.offsetHeight}px`);
+};
+
+atualizarAlturaHeader();
+window.addEventListener("resize",atualizarAlturaHeader);
+
 const closeMenu=()=>{
  if(!menuButton||!mainNav)return;
  menuButton.classList.remove("is-open");
  menuButton.setAttribute("aria-expanded","false");
  mainNav.classList.remove("is-open");
  body.classList.remove("menu-open");
+ atualizarAlturaHeader();
 };
 
 const toggleMenu=()=>{
@@ -30,10 +39,12 @@ const toggleMenu=()=>{
  menuButton.setAttribute("aria-expanded",String(!isOpen));
  mainNav.classList.toggle("is-open",!isOpen);
  body.classList.toggle("menu-open",!isOpen);
+ requestAnimationFrame(atualizarAlturaHeader);
 };
 
 if(menuButton)menuButton.addEventListener("click",toggleMenu);
 navLinks.forEach(link=>link.addEventListener("click",closeMenu));
+
 document.addEventListener("keydown",event=>{
  if(event.key==="Escape")closeMenu();
 });
@@ -42,6 +53,7 @@ const updateHeaderState=()=>{
  if(!header||!hero)return;
  const heroBottom=hero.offsetTop+hero.offsetHeight;
  header.classList.toggle("is-after-hero",window.scrollY>heroBottom-header.offsetHeight-8);
+ atualizarAlturaHeader();
 };
 
 updateHeaderState();
@@ -60,14 +72,17 @@ const escreverTextoHero=()=>{
  const textoFinal=textoHero.dataset.textoFinal||"";
  const textoDestaque=textoHero.dataset.textoDestaque||"";
  textoHero.textContent="";
+
  const cursor=document.createElement("span");
  cursor.className="cursor-escrita";
  cursor.setAttribute("aria-hidden","true");
+
  const primeiraLinha=document.createElement("span");
  const quebra=document.createElement("br");
  const segundaLinha=document.createElement("span");
  const espaco=document.createTextNode(" ");
  const destaque=document.createElement("strong");
+
  textoHero.append(primeiraLinha,quebra,segundaLinha,espaco,destaque,cursor);
 
  if(reduzirMovimento){
@@ -83,6 +98,7 @@ const escreverTextoHero=()=>{
    if(aoFinal)aoFinal();
    return;
   }
+
   elemento.textContent+=texto.charAt(indice);
   window.setTimeout(()=>escrever(elemento,texto,indice+1,aoFinal),34);
  };
@@ -162,9 +178,7 @@ const iniciarAnimacoesDeSecao=()=>{
  if(secaoResultado){
   const observadorContador=new IntersectionObserver(entradas=>{
    entradas.forEach(entrada=>{
-    if(entrada.isIntersecting){
-     reiniciarContadorDias();
-    }
+    if(entrada.isIntersecting)reiniciarContadorDias();
    });
   },{threshold:.55,rootMargin:"-15% 0px -15% 0px"});
 

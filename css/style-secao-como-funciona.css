@@ -1,10 +1,10 @@
-.secao-como-funciona{position:relative;overflow:hidden;background:url("../assets/images/bg-como-funciona-mobile.jpg") center bottom / cover no-repeat;}
-.como-funciona-conteudo{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:space-between;height:100%;min-height:0;gap:20px;}
+.secao-como-funciona{position:relative;overflow:hidden;min-height:100dvh;box-sizing:border-box;background:url("../assets/images/bg-como-funciona-mobile.jpg") center bottom/cover no-repeat;}
+.como-funciona-conteudo{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;height:100%;min-height:100dvh;box-sizing:border-box;gap:20px;}
 .como-funciona-bloco{display:flex;flex-direction:column;align-items:center;width:100%;min-height:0;}
-.como-funciona-titulo{margin:0;color:transparent;font-family:var(--font-headline);font-size:clamp(3.15rem,12vw,4.35rem);font-weight:700;line-height:0.98;letter-spacing:0;text-align:center;text-transform:uppercase;background:linear-gradient(90deg,#4d6dff 0%,#8058f6 44%,#f02c80 100%);background-clip:text;-webkit-background-clip:text;}
-.pincel-como-funciona{display:block;width:min(285px,82vw);height:auto;margin:20px 0 20px;}
+.como-funciona-titulo{margin:0;color:transparent;font-family:var(--font-headline);font-size:clamp(3.15rem,12vw,4.35rem);font-weight:700;line-height:.98;letter-spacing:0;text-align:center;text-transform:uppercase;background:linear-gradient(90deg,#4d6dff 0%,#8058f6 44%,#f02c80 100%);background-clip:text;-webkit-background-clip:text;}
+.pincel-como-funciona{display:block;width:min(285px,82vw);height:auto;margin:20px 0;}
 .lista-como-funciona{display:grid;gap:18px;margin:0;padding:0;list-style:none;}
-.lista-como-funciona li{display:grid;grid-template-columns:42px minmax(0,1fr);align-items:center;gap:12px;color:#111111;font-family:var(--font-headline);font-size:22.88px;font-weight:700;line-height:1.03;opacity:0;transform:translateY(28px);transition:opacity 650ms ease,transform 650ms ease;}
+.lista-como-funciona li{display:grid;grid-template-columns:42px minmax(0,1fr);align-items:center;gap:12px;color:#111;font-family:var(--font-headline);font-size:22.88px;font-weight:700;line-height:1.03;opacity:0;transform:translateY(28px);transition:opacity 650ms ease,transform 650ms ease;}
 .como-funciona-bloco.visivel .lista-como-funciona li{opacity:1;transform:translateY(0);}
 .como-funciona-bloco.visivel .lista-como-funciona li:nth-child(1){transition-delay:120ms;}
 .como-funciona-bloco.visivel .lista-como-funciona li:nth-child(2){transition-delay:260ms;}
@@ -12,8 +12,9 @@
 .como-funciona-bloco.visivel .lista-como-funciona li:nth-child(4){transition-delay:540ms;}
 .numero-passo{color:#cf1f78;font-size:1.16em;line-height:1;text-align:right;}
 .lista-como-funciona strong{font-weight:700;}
-.alerta-como-funciona{width:min(100%,390px);box-sizing:border-box;padding:15px 18px 16px;border:1px solid rgba(7,7,9,0.06);border-radius:9px;background:rgba(255,255,255,0.94);box-shadow:0 14px 36px rgba(18,18,24,0.14);max-height:68px;margin:0 0 35px;}
-.alerta-como-funciona p{max-width:none;margin:0;color:#111111;font-family:var(--font-headline);font-size:16px;font-weight:700;line-height:1.12;text-align:center;}
+.alerta-como-funciona{position:absolute;left:50%;bottom:90px;transform:translateX(-50%);width:min(calc(100% - 20px),390px);box-sizing:border-box;padding:15px 18px 16px;border:1px solid rgba(7,7,9,.06);border-radius:9px;background:rgba(255,255,255,.94);box-shadow:0 14px 36px rgba(18,18,24,.14);margin:0;}
+.alerta-como-funciona p{max-width:none;margin:0;color:#111;font-family:var(--font-headline);font-size:16px;font-weight:700;line-height:1.12;text-align:center;}
 .alerta-como-funciona strong{color:#e02c80;font-weight:800;}
 .alerta-como-funciona span{display:block;}
-.alerta-como-funciona b{color:#111111;font-weight:900;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+.alerta-como-funciona b{color:#111;font-weight:900;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+@media (min-width:768px){.secao-como-funciona{min-height:560px;padding:72px 0 58px;background:url("../assets/images/bg-como-funciona.jpg") center/cover no-repeat;}.como-funciona-conteudo{display:grid;grid-template-columns:minmax(520px,.62fr) minmax(280px,.38fr);grid-template-rows:1fr auto;align-items:center;justify-items:start;min-height:430px;height:auto;box-sizing:border-box;}.como-funciona-bloco{justify-items:start;grid-column:1;max-width:660px;align-items:flex-start;}.como-funciona-titulo{font-size:52px;text-align:left;margin-bottom:17px;}.pincel-como-funciona{width:420px;height:15px;margin:12px 0 34px 10px;}.lista-como-funciona{gap:19px;margin:21px 10px 40px 0;}.lista-como-funciona li{grid-template-columns:54px minmax(0,1fr);gap:26px;font-size:clamp(2rem,2vw,2.7rem);}.numero-passo{grid-column:1;}.lista-como-funciona strong{grid-column:2;}.alerta-como-funciona{width:min(calc(100% - 20px),590px);padding:20px 34px 22px;border-radius:9px;max-height:max-content;}}
