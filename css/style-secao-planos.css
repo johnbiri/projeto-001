@@ -5,16 +5,18 @@
 .planos-cabecalho p{max-width:330px;margin:0;color:#111;font-family:var(--font-support);font-size:clamp(1rem,4.2vw,1.22rem);font-weight:700;line-height:1.24;}
 .planos-cabecalho strong{font-weight:900;text-transform:uppercase;}
 .planos-cabecalho strong:first-of-type{text-decoration:underline;text-decoration-color:#000;text-decoration-thickness:3px;text-underline-offset:3px;}
-.cards-planos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;justify-content:center;gap:8px;width:min(100%,338px);margin-top:auto;margin-bottom:0;}
-.card-plano{position:relative;display:grid;justify-items:center;align-content:start;min-height:202px;padding:18px 12px 14px;border:2px solid #e02c80;border-radius:7px;color:#111;text-align:center;background:rgba(255,255,255,.95);box-shadow:0 8px 18px rgba(0,0,0,.14);transition:transform 220ms ease,box-shadow 220ms ease;}
+.cards-planos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;justify-content:center;gap:8px;width:min(100%,338px);margin-top:auto;margin-bottom:40px;}
+.card-plano{position:relative;display:grid;grid-template-rows:auto auto auto 1fr auto auto;justify-items:center;align-content:start;min-height:202px;padding:18px 12px 14px;border:2px solid #e02c80;border-radius:7px;color:#111;text-align:center;background:rgba(255,255,255,.95);box-shadow:0 8px 18px rgba(0,0,0,.14);transition:transform 220ms ease,box-shadow 220ms ease;}
 .card-plano:hover,.card-plano:focus-visible{transform:translateY(-4px);box-shadow:0 15px 30px rgba(0,0,0,.2);}
 .card-plano h3{margin:0;font-family:var(--font-support);font-size:clamp(1.1rem,5vw,1.45rem);font-weight:900;line-height:1.05;}
-.card-plano>span:not(.selo-plano){display:block;margin-bottom:26px;color:inherit;font-size:.88rem;line-height:1.1;}
+.card-plano>.periodo-plano{display:block;margin-bottom:26px;color:inherit;font-size:.88rem;line-height:1.1;}
 .card-plano p{max-width:none;margin:0 0 12px;color:inherit;font-family:var(--font-support);font-size:.86rem;font-weight:700;line-height:1.18;}
 .card-plano p strong{text-decoration:line-through;}
-.card-plano small{margin:-4px 0 5px;font-family:var(--font-support);font-size:1.02rem;font-weight:900;}
+.card-plano>.parcelamento-plano{display:block;min-height:18px;margin:-4px 0 5px;font-family:var(--font-support);font-size:1.02rem;font-weight:900;line-height:1;}
 .preco-plano{color:#d71c78;font-family:var(--font-support);font-size:clamp(1.3rem,6vw,1.75rem);font-weight:900;line-height:1;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
 .card-plano b{margin-top:9px;font-family:var(--font-support);font-size:.96rem;font-weight:900;}
 .plano-trimestral{color:#fff;background:#e01574;border-color:#b00d55;}
 .plano-trimestral .preco-plano{color:#080808;}
-.selo-plano{position:absolute;top:-25px;right:-19px;z-index:2;padding:7px 10px 8px;border-radius:5px;color:#fff;font-family:var(--font-headline);font-size:16px;font-weight:800;line-height:1;text-transform:uppercase;white-space:nowrap;background:linear-gradient(90deg,#475dff,#e02cdb);box-shadow:0 8px 18px rgba(95,64,220,.28);transform:rotate(12deg);}
+.selo-plano{position:absolute;top:-25px;right:-19px;z-index:2;padding:7px 10px 8px;border-radius:5px;color:#fff;font-family:var(--font-headline);font-size:16px;font-weight:800;line-height:1;text-transform:uppercase;white-space:nowrap;background:linear-gradient(90deg,#475dff,#e02cdb);box-shadow:0 8px 18px rgba(95,64,220,.28);opacity:0;transform:rotate(12deg) scale(0);transform-origin:center;}
+.secao-planos.selo-visivel .selo-plano{animation:surgirSelo .45s cubic-bezier(.175,.885,.32,1.275) forwards;}
+@keyframes surgirSelo{0%{opacity:0;transform:rotate(12deg) scale(0);}70%{opacity:1;transform:rotate(12deg) scale(1.1);}100%{opacity:1;transform:rotate(12deg) scale(1);}}

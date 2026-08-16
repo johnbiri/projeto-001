@@ -1,252 +1,204 @@
-(function () {
-  "use strict";
+(function(){
+"use strict";
+const body=document.body;
+const header=document.querySelector(".site-header");
+const hero=document.querySelector(".secao-hero");
+const menuButton=document.querySelector(".menu-button");
+const mainNav=document.querySelector(".main-nav");
+const navLinks=document.querySelectorAll('a[href^="#"]');
+const itensSelo=document.querySelectorAll(".item-selo");
+const textoHero=document.querySelector(".texto-hero");
+const elementosEntrada=document.querySelectorAll(".entrada-secao");
+const secaoResultado=document.querySelector(".secao-resultado");
+const contadorDias=document.querySelector(".contador-dias");
+const itensFaq=document.querySelectorAll(".item-faq");
+const reduzirMovimento=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let contadorIniciado=false;
 
-  const body = document.body;
-  const header = document.querySelector(".site-header");
-  const hero = document.querySelector(".secao-hero");
-  const menuButton = document.querySelector(".menu-button");
-  const mainNav = document.querySelector(".main-nav");
-  const navLinks = document.querySelectorAll('a[href^="#"]');
-  const itensSelo = document.querySelectorAll(".item-selo");
-  const textoHero = document.querySelector(".texto-hero");
-  const elementosEntrada = document.querySelectorAll(".entrada-secao");
-  const secaoResultado = document.querySelector(".secao-resultado");
-  const contadorDias = document.querySelector(".contador-dias");
-  const itensFaq = document.querySelectorAll(".item-faq");
-  const reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const closeMenu=()=>{
+ if(!menuButton||!mainNav)return;
+ menuButton.classList.remove("is-open");
+ menuButton.setAttribute("aria-expanded","false");
+ mainNav.classList.remove("is-open");
+ body.classList.remove("menu-open");
+};
 
-  let contadorIniciado = false;
+const toggleMenu=()=>{
+ if(!menuButton||!mainNav)return;
+ const isOpen=menuButton.getAttribute("aria-expanded")==="true";
+ menuButton.classList.toggle("is-open",!isOpen);
+ menuButton.setAttribute("aria-expanded",String(!isOpen));
+ mainNav.classList.toggle("is-open",!isOpen);
+ body.classList.toggle("menu-open",!isOpen);
+};
 
-  const closeMenu = () => {
-    if (!menuButton || !mainNav) return;
+if(menuButton)menuButton.addEventListener("click",toggleMenu);
+navLinks.forEach(link=>link.addEventListener("click",closeMenu));
+document.addEventListener("keydown",event=>{
+ if(event.key==="Escape")closeMenu();
+});
 
-    menuButton.classList.remove("is-open");
-    menuButton.setAttribute("aria-expanded", "false");
-    mainNav.classList.remove("is-open");
-    body.classList.remove("menu-open");
-  };
+const updateHeaderState=()=>{
+ if(!header||!hero)return;
+ const heroBottom=hero.offsetTop+hero.offsetHeight;
+ header.classList.toggle("is-after-hero",window.scrollY>heroBottom-header.offsetHeight-8);
+};
 
-  const toggleMenu = () => {
-    if (!menuButton || !mainNav) return;
+updateHeaderState();
+window.addEventListener("scroll",updateHeaderState,{passive:true});
 
-    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+const iniciarCarrosselSelo=()=>{
+ if(!itensSelo.length)return;
+ itensSelo.forEach((item,indice)=>{
+  item.classList.toggle("ativo",indice===0);
+ });
+};
 
-    menuButton.classList.toggle("is-open", !isOpen);
-    menuButton.setAttribute("aria-expanded", String(!isOpen));
-    mainNav.classList.toggle("is-open", !isOpen);
-    body.classList.toggle("menu-open", !isOpen);
-  };
+const escreverTextoHero=()=>{
+ if(!textoHero)return;
+ const textoInicial=textoHero.dataset.textoInicial||"";
+ const textoFinal=textoHero.dataset.textoFinal||"";
+ const textoDestaque=textoHero.dataset.textoDestaque||"";
+ textoHero.textContent="";
+ const cursor=document.createElement("span");
+ cursor.className="cursor-escrita";
+ cursor.setAttribute("aria-hidden","true");
+ const primeiraLinha=document.createElement("span");
+ const quebra=document.createElement("br");
+ const segundaLinha=document.createElement("span");
+ const espaco=document.createTextNode(" ");
+ const destaque=document.createElement("strong");
+ textoHero.append(primeiraLinha,quebra,segundaLinha,espaco,destaque,cursor);
 
-  if (menuButton) {
-    menuButton.addEventListener("click", toggleMenu);
+ if(reduzirMovimento){
+  primeiraLinha.textContent=textoInicial;
+  segundaLinha.textContent=textoFinal;
+  destaque.textContent=textoDestaque;
+  textoHero.classList.add("escrita-finalizada");
+  return;
+ }
+
+ const escrever=(elemento,texto,indice,aoFinal)=>{
+  if(indice>=texto.length){
+   if(aoFinal)aoFinal();
+   return;
   }
+  elemento.textContent+=texto.charAt(indice);
+  window.setTimeout(()=>escrever(elemento,texto,indice+1,aoFinal),34);
+ };
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
+ window.setTimeout(()=>{
+  escrever(primeiraLinha,textoInicial,0,()=>{
+   window.setTimeout(()=>{
+    escrever(segundaLinha,textoFinal,0,()=>{
+     window.setTimeout(()=>{
+      escrever(destaque,textoDestaque,0,()=>{
+       textoHero.classList.add("escrita-finalizada");
+      });
+     },120);
+    });
+   },160);
   });
+ },650);
+};
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
+const iniciarContadorDias=()=>{
+ if(!contadorDias||contadorIniciado)return;
+ contadorIniciado=true;
+
+ const valorFinal=Number.parseInt(contadorDias.dataset.contadorFinal||"45",10);
+
+ if(reduzirMovimento){
+  contadorDias.textContent=String(valorFinal);
+  return;
+ }
+
+ contadorDias.textContent="0";
+
+ const duracao=2800;
+ const inicio=performance.now();
+
+ const animar=agora=>{
+  const progresso=Math.min((agora-inicio)/duracao,1);
+  const suavizado=1-Math.pow(1-progresso,3);
+  const valorAtual=Math.round(suavizado*valorFinal);
+  contadorDias.textContent=String(valorAtual);
+
+  if(progresso<1)window.requestAnimationFrame(animar);
+ };
+
+ window.requestAnimationFrame(animar);
+};
+
+const reiniciarContadorDias=()=>{
+ if(!contadorDias)return;
+ contadorIniciado=false;
+ contadorDias.textContent="0";
+ iniciarContadorDias();
+};
+
+const iniciarAnimacoesDeSecao=()=>{
+ if(!elementosEntrada.length&&!secaoResultado)return;
+
+ if(!("IntersectionObserver" in window)){
+  elementosEntrada.forEach(elemento=>elemento.classList.add("visivel"));
+  if(secaoResultado)iniciarContadorDias();
+  return;
+ }
+
+ const observadorEntrada=new IntersectionObserver(entradas=>{
+  entradas.forEach(entrada=>{
+   if(entrada.isIntersecting){
+    entrada.target.classList.remove("visivel");
+    requestAnimationFrame(()=>entrada.target.classList.add("visivel"));
+   }else{
+    entrada.target.classList.remove("visivel");
+   }
   });
+ },{threshold:.2});
 
-  const updateHeaderState = () => {
-    if (!header || !hero) return;
+ elementosEntrada.forEach(elemento=>observadorEntrada.observe(elemento));
 
-    const heroBottom = hero.offsetTop + hero.offsetHeight;
-
-    header.classList.toggle(
-      "is-after-hero",
-      window.scrollY > heroBottom - header.offsetHeight - 8
-    );
-  };
-
-  updateHeaderState();
-  window.addEventListener("scroll", updateHeaderState, { passive: true });
-
-  const iniciarCarrosselSelo = () => {
-    if (!itensSelo.length) return;
-
-    itensSelo.forEach((item, indice) => {
-      item.classList.toggle("ativo", indice === 0);
-    });
-  };
-
-  const escreverTextoHero = () => {
-    if (!textoHero) return;
-
-    const textoInicial = textoHero.dataset.textoInicial || "";
-    const textoFinal = textoHero.dataset.textoFinal || "";
-    const textoDestaque = textoHero.dataset.textoDestaque || "";
-
-    textoHero.textContent = "";
-
-    const cursor = document.createElement("span");
-    cursor.className = "cursor-escrita";
-    cursor.setAttribute("aria-hidden", "true");
-
-    const primeiraLinha = document.createElement("span");
-    const quebra = document.createElement("br");
-    const segundaLinha = document.createElement("span");
-    const espaco = document.createTextNode(" ");
-    const destaque = document.createElement("strong");
-
-    textoHero.append(
-      primeiraLinha,
-      quebra,
-      segundaLinha,
-      espaco,
-      destaque,
-      cursor
-    );
-
-    if (reduzirMovimento) {
-      primeiraLinha.textContent = textoInicial;
-      segundaLinha.textContent = textoFinal;
-      destaque.textContent = textoDestaque;
-      textoHero.classList.add("escrita-finalizada");
-      return;
+ if(secaoResultado){
+  const observadorContador=new IntersectionObserver(entradas=>{
+   entradas.forEach(entrada=>{
+    if(entrada.isIntersecting){
+     reiniciarContadorDias();
     }
+   });
+  },{threshold:.55,rootMargin:"-15% 0px -15% 0px"});
 
-    const escrever = (elemento, texto, indice, aoFinal) => {
-      if (indice >= texto.length) {
-        if (aoFinal) aoFinal();
-        return;
-      }
+  observadorContador.observe(secaoResultado);
+ }
+};
 
-      elemento.textContent += texto.charAt(indice);
+const iniciarAccordionFaq=()=>{
+ if(!itensFaq.length)return;
 
-      window.setTimeout(
-        () => escrever(elemento, texto, indice + 1, aoFinal),
-        34
-      );
-    };
+ const fecharItem=item=>{
+  const botao=item.querySelector(".pergunta-faq");
+  item.classList.remove("aberto");
+  botao?.setAttribute("aria-expanded","false");
+ };
 
-    window.setTimeout(() => {
-      escrever(primeiraLinha, textoInicial, 0, () => {
-        window.setTimeout(() => {
-          escrever(segundaLinha, textoFinal, 0, () => {
-            window.setTimeout(() => {
-              escrever(destaque, textoDestaque, 0, () => {
-                textoHero.classList.add("escrita-finalizada");
-              });
-            }, 120);
-          });
-        }, 160);
-      });
-    }, 650);
-  };
+ itensFaq.forEach(item=>{
+  const botao=item.querySelector(".pergunta-faq");
+  if(!botao)return;
 
-  const iniciarContadorDias = () => {
-    if (!contadorDias || contadorIniciado) return;
+  botao.addEventListener("click",()=>{
+   const estaAberto=item.classList.contains("aberto");
+   itensFaq.forEach(fecharItem);
 
-    contadorIniciado = true;
+   if(!estaAberto){
+    item.classList.add("aberto");
+    botao.setAttribute("aria-expanded","true");
+   }
+  });
+ });
+};
 
-    const valorFinal = Number.parseInt(
-      contadorDias.dataset.contadorFinal || "45",
-      10
-    );
-
-    if (reduzirMovimento) {
-      contadorDias.textContent = String(valorFinal);
-      return;
-    }
-
-    const duracao = 2800;
-    const inicio = performance.now();
-
-    const animar = (agora) => {
-      const progresso = Math.min((agora - inicio) / duracao, 1);
-      const suavizado = 1 - Math.pow(1 - progresso, 3);
-      const valorAtual = Math.round(suavizado * valorFinal);
-
-      contadorDias.textContent = String(valorAtual);
-
-      if (progresso < 1) {
-        window.requestAnimationFrame(animar);
-      }
-    };
-
-    window.requestAnimationFrame(animar);
-  };
-
-  const iniciarAnimacoesDeSecao = () => {
-    if (!elementosEntrada.length && !secaoResultado) return;
-
-    if (!("IntersectionObserver" in window)) {
-      elementosEntrada.forEach((elemento) => {
-        elemento.classList.add("visivel");
-      });
-
-      iniciarContadorDias();
-      return;
-    }
-
-    const observadorEntrada = new IntersectionObserver(
-      (entradas) => {
-        entradas.forEach((entrada) => {
-          if (!entrada.isIntersecting) return;
-
-          entrada.target.classList.add("visivel");
-          observadorEntrada.unobserve(entrada.target);
-        });
-      },
-      { threshold: 0.28 }
-    );
-
-    elementosEntrada.forEach((elemento) => {
-      observadorEntrada.observe(elemento);
-    });
-
-    if (secaoResultado) {
-      const observadorContador = new IntersectionObserver(
-        (entradas) => {
-          entradas.forEach((entrada) => {
-            if (!entrada.isIntersecting) return;
-
-            iniciarContadorDias();
-            observadorContador.disconnect();
-          });
-        },
-        {
-          threshold: 0.55,
-          rootMargin: "-15% 0px -15% 0px"
-        }
-      );
-
-      observadorContador.observe(secaoResultado);
-    }
-  };
-
-  const iniciarAccordionFaq = () => {
-    if (!itensFaq.length) return;
-
-    const fecharItem = (item) => {
-      const botao = item.querySelector(".pergunta-faq");
-
-      item.classList.remove("aberto");
-      botao?.setAttribute("aria-expanded", "false");
-    };
-
-    itensFaq.forEach((item) => {
-      const botao = item.querySelector(".pergunta-faq");
-
-      if (!botao) return;
-
-      botao.addEventListener("click", () => {
-        const estaAberto = item.classList.contains("aberto");
-
-        itensFaq.forEach(fecharItem);
-
-        if (!estaAberto) {
-          item.classList.add("aberto");
-          botao.setAttribute("aria-expanded", "true");
-        }
-      });
-    });
-  };
-
-  iniciarCarrosselSelo();
-  escreverTextoHero();
-  iniciarAnimacoesDeSecao();
-  iniciarAccordionFaq();
+iniciarCarrosselSelo();
+escreverTextoHero();
+iniciarAnimacoesDeSecao();
+iniciarAccordionFaq();
 })();
