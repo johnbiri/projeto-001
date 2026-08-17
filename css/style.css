@@ -746,15 +746,6 @@ p {
     font-size: 4rem;
   }
 
-  .resultado-promessa {
-    justify-self: center;
-    max-width: 320px;
-    color: #ffffff;
-    font-size: 1rem;
-    text-align: center;
-    text-shadow: none;
-  }
-
   .secao-depoimentos {
     min-height: 620px;
     padding: 70px 0 72px;
