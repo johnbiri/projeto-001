@@ -1,8 +1,8 @@
 .secao-equipe-tecnica{position:relative;overflow:hidden;background:url("../assets/images/bg-equipe-tecnica.jpg") top center/cover no-repeat;}
 .secao-equipe-tecnica::before{content:"";position:absolute;inset:22px 0 auto 0;height:250px;opacity:.3;background:radial-gradient(circle at 36% 30%,rgba(145,151,159,.28) 0 1.5px,transparent 1.5px 6px),radial-gradient(circle at 64% 38%,rgba(145,151,159,.24) 0 1.5px,transparent 1.5px 6px);mask-image:radial-gradient(ellipse at center,#000 0 48%,transparent 76%);pointer-events:none;}
 .equipe-tecnica-conteudo{width:83.333333%!important;margin:0!important;padding:0!important;}
-.equipe-cabecalho{display:grid!important;justify-items:center!important;width:min(100%,360px)!important;margin:0 auto!important;padding:0!important;text-align:center!important;transform:scale(.72)!important;}
-.equipe-cabecalho h2{margin:0 0 8px;color:#111;font-family:var(--font-headline);font-size:clamp(1.95rem,8vw,2.85rem);font-weight:800;line-height:1.06;letter-spacing:0;text-transform:none;}
+.equipe-cabecalho{display:grid!important;justify-items:center!important;width:100%!important;margin:0 auto!important;padding:0!important;text-align:center!important;transform:scale(.72)!important;}
+.equipe-cabecalho h2{margin:0 0 8px;color:#111;font-family:var(--font-headline);font-size:clamp(1.8rem,7.8vw,3.42rem);font-weight:800;line-height:1.06;letter-spacing:.02em;text-transform:none;white-space:nowrap;}
 .equipe-cabecalho h2 strong{color:#e02c80;font-weight:800;}
 .equipe-cabecalho p{max-width:330px;margin:10px 0;color:#111;font-family:var(--font-headline);font-size:clamp(1.08rem,4.6vw,1.45rem);font-weight:500;line-height:1.18;}
 .pincel-equipe{display:block;width:min(235px,72vw);height:10px;margin-top:15px;border-radius:999px;background:#e02c80;box-shadow:inset 18px 0 0 rgba(255,255,255,.2);transform:rotate(-3deg) skewX(-13deg);}
