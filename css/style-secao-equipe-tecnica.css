@@ -1,12 +1,12 @@
 .secao-equipe-tecnica{position:relative;overflow:hidden;background:url("../assets/images/bg-equipe-tecnica.jpg") top center/cover no-repeat;}
 .secao-equipe-tecnica::before{content:"";position:absolute;inset:22px 0 auto 0;height:250px;opacity:.3;background:radial-gradient(circle at 36% 30%,rgba(145,151,159,.28) 0 1.5px,transparent 1.5px 6px),radial-gradient(circle at 64% 38%,rgba(145,151,159,.24) 0 1.5px,transparent 1.5px 6px);mask-image:radial-gradient(ellipse at center,#000 0 48%,transparent 76%);pointer-events:none;}
-.equipe-tecnica-conteudo{position:relative;z-index:1;display:grid;justify-items:center;gap:28px;}
-.equipe-cabecalho{display:grid;justify-items:center;width:min(100%,360px);text-align:center;transform:scale(.9);}
+.equipe-tecnica-conteudo{width:83.333333%!important;margin:0!important;padding:0!important;}
+.equipe-cabecalho{display:grid!important;justify-items:center!important;width:min(100%,360px)!important;margin:0 auto!important;padding:0!important;text-align:center!important;transform:scale(.72)!important;}
 .equipe-cabecalho h2{margin:0 0 8px;color:#111;font-family:var(--font-headline);font-size:clamp(1.95rem,8vw,2.85rem);font-weight:800;line-height:1.06;letter-spacing:0;text-transform:none;}
 .equipe-cabecalho h2 strong{color:#e02c80;font-weight:800;}
 .equipe-cabecalho p{max-width:330px;margin:10px 0;color:#111;font-family:var(--font-headline);font-size:clamp(1.08rem,4.6vw,1.45rem);font-weight:500;line-height:1.18;}
 .pincel-equipe{display:block;width:min(235px,72vw);height:10px;margin-top:15px;border-radius:999px;background:#e02c80;box-shadow:inset 18px 0 0 rgba(255,255,255,.2);transform:rotate(-3deg) skewX(-13deg);}
-.grid-equipe{display:grid;grid-template-columns:repeat(2,minmax(112px,1fr));gap:20px 10px;width:min(90%,340px);margin:5px 0 20px -20px;opacity:0;transform:translateX(-70px);}
+.grid-equipe{display:grid;grid-template-columns:repeat(2,minmax(112px,1fr));gap:20px 10px;width:min(90%,340px);margin:5px 0 20px 20px;opacity:0;transform:translateX(-70px);}
 .grid-equipe.visivel{animation:equipeEntrar .5s cubic-bezier(.22,.61,.36,1) forwards;}
 .profissional-equipe{display:grid;justify-items:center;text-align:center;}
 .profissional-equipe img{width:104px;height:104px;margin-bottom:10px;border:2px solid #c61670;border-radius:50%;object-fit:cover;background:#f1f1f1;}
@@ -18,6 +18,6 @@
 .chamada-equipe span{display:grid;place-items:center;width:36px;height:36px;border:2px solid #e02c80;border-radius:5px;color:#e02c80;font-size:1.45rem;line-height:1;}
 .chamada-equipe p{max-width:none;margin:0;color:#333;font-family:var(--font-support);font-size:.92rem;line-height:1.35;}
 .chamada-equipe strong{color:#e02c80;font-weight:800;}
-.texto-vertical-equipe{position:absolute;right:-10px;bottom:90px;z-index:0;color:transparent;font-family:var(--font-headline);font-size:clamp(4.5rem,18vw,8rem);font-weight:900;line-height:1;text-transform:uppercase;writing-mode:sideways-lr;background:linear-gradient(180deg,#f5bd28 0%,#f06c53 50%,#ed1680 100%);background-clip:text;-webkit-background-clip:text;opacity:.84;}
+.texto-vertical-equipe{position:absolute;right:-10px;top:0;bottom:0;height:max-content;margin:auto 0;z-index:0;color:transparent;font-family:var(--font-headline);font-size:clamp(3.2rem,16vh,6.2rem);font-weight:900;line-height:1;text-transform:uppercase;writing-mode:sideways-lr;background:linear-gradient(180deg,#f5bd28 0%,#f06c53 50%,#ed1680 100%);background-clip:text;-webkit-background-clip:text;opacity:.84;}
 @keyframes equipeEntrar{from{opacity:0;transform:translateX(-70px);}to{opacity:1;transform:translateX(-20px);}}
 @media (min-width:768px){.equipe-cabecalho{margin-left:auto;margin-right:auto;text-align:center;}.grid-equipe{margin-left:auto;margin-right:auto;}}
